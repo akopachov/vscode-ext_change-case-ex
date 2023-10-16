@@ -4,8 +4,26 @@
   "description": "Changes case of a selected text",
   "version": "1.0.0",
   "engines": {
-    "vscode": "^1.32.0"
+    "vscode": "^1.83.0"
   },
+  "icon": "icon.png",
+  "publisher": "akopachov",
+  "author": {
+    "name": "Alexander Kopachov"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akopachov/vscode-ext_change-case-ex.git"
+  },
+  "markdown": "standard",
+  "keywords": [
+    "Alexander Kopachov",
+    "Case Change",
+    "Multiple Select Change",
+    "Case Convert",
+    "Multiple Select",
+    "Change Case"
+  ],
   "categories": [
     "Formatters",
     "Other"
@@ -33,7 +51,9 @@
     "watch": "esbuild ./src/extension.mts --watch --bundle --tree-shaking=true --external:vscode --platform=node --outfile=./out/extension.js",
     "pretest": "pnpm run compile && pnpm run lint",
     "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js"
+    "test": "node ./out/test/runTest.js",
+    "package": "pnpm vsce package --no-dependencies",
+    "publish": "pnpm vsce publish --no-dependencies"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.2",
