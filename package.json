@@ -1,0 +1,78 @@
+{
+  "name": "change-case-ex",
+  "displayName": "Change Case Ex",
+  "description": "Changes case of a selected text",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.32.0"
+  },
+  "categories": [
+    "Formatters",
+    "Other"
+  ],
+  "type": "commonjs",
+  "activationEvents": [
+    "onLanguage:javascript",
+    "onLanguage:typescript",
+    "onLanguage:html",
+    "onLanguage:css",
+    "onLanguage:less",
+    "onLanguage:typescriptreact",
+    "onLanguage:scss",
+    "onLanguage:python",
+    "onLanguage:markdown",
+    "onLanguage:json",
+    "onLanguage:javascriptreact",
+    "onLanguage:sass",
+    "onLanguage:go"
+  ],
+  "main": "./out/extension.js",
+  "scripts": {
+    "vscode:prepublish": "pnpm run compile",
+    "compile": "esbuild ./src/extension.mts --bundle --tree-shaking=true --external:vscode --platform=node --outfile=./out/extension.js",
+    "watch": "esbuild ./src/extension.mts --watch --bundle --tree-shaking=true --external:vscode --platform=node --outfile=./out/extension.js",
+    "pretest": "pnpm run compile && pnpm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.2",
+    "@types/node": "~20.8.6",
+    "@types/vscode": "^1.83.0",
+    "@typescript-eslint/eslint-plugin": "^6.7.5",
+    "@typescript-eslint/parser": "^6.7.5",
+    "@vscode/test-electron": "^2.3.5",
+    "case-anything": "^2.1.13",
+    "change-case": "^5.0.2",
+    "esbuild": "^0.19.4",
+    "eslint": "^8.51.0",
+    "glob": "^10.3.10",
+    "mocha": "^10.2.0",
+    "typescript": "^5.2.2"
+  },
+  "contributes": {
+    "configuration": {
+      "title": "Case Change Ex",
+      "properties": {
+        "case.setting": {
+          "type": "object",
+          "default": {
+            "snakeCase": true,
+            "camelCase": true,
+            "upperCase": true,
+            "kebabCase": true,
+            "constantCase": true,
+            "pascalCase": true,
+            "capitalizeCase": true,
+            "lowerCase": true,
+            "dotCase": true,
+            "pathCase": true,
+            "sentenceCase": true,
+            "trainCase": true
+          },
+          "description": "Specifies the case which you want to use."
+        }
+      }
+    }
+  }
+}
