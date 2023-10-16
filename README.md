@@ -1,4 +1,4 @@
-# Change Case
+# Change Case Ex
 
 This extension allows you to convert the selected text into different case. Supported Cases are:
 
