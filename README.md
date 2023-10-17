@@ -1,5 +1,7 @@
 # Change Case Ex
 
+[![Marketplace](https://vsmarketplacebadges.dev/version/akopachov.change-case-ex.svg)](https://marketplace.visualstudio.com/items?itemName=akopachov.change-case-ex)
+
 This extension allows you to convert the selected text into different case. Supported Cases are:
 
 | Case | Example |
