@@ -2,7 +2,7 @@
   "name": "change-case-ex",
   "displayName": "Change Case Ex",
   "description": "Changes case of a selected text",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "engines": {
     "vscode": "^1.83.0"
   },
@@ -30,19 +30,7 @@
   ],
   "type": "commonjs",
   "activationEvents": [
-    "onLanguage:javascript",
-    "onLanguage:typescript",
-    "onLanguage:html",
-    "onLanguage:css",
-    "onLanguage:less",
-    "onLanguage:typescriptreact",
-    "onLanguage:scss",
-    "onLanguage:python",
-    "onLanguage:markdown",
-    "onLanguage:json",
-    "onLanguage:javascriptreact",
-    "onLanguage:sass",
-    "onLanguage:go"
+    "onLanguage"
   ],
   "main": "./out/extension.js",
   "scripts": {
@@ -50,7 +38,7 @@
     "compile": "esbuild ./src/extension.mts --bundle --tree-shaking=true --external:vscode --platform=node --outfile=./out/extension.js",
     "watch": "esbuild ./src/extension.mts --watch --bundle --tree-shaking=true --external:vscode --platform=node --outfile=./out/extension.js",
     "pretest": "pnpm run compile && pnpm run lint",
-    "lint": "eslint src --ext ts",
+    "lint": "eslint src --ext mts",
     "test": "node ./out/test/runTest.js",
     "package": "pnpm vsce package --no-dependencies",
     "publish": "pnpm vsce publish --no-dependencies"
@@ -59,15 +47,20 @@
     "@types/mocha": "^10.0.2",
     "@types/node": "~20.8.6",
     "@types/vscode": "^1.83.0",
-    "@typescript-eslint/eslint-plugin": "^6.7.5",
-    "@typescript-eslint/parser": "^6.7.5",
+    "@typescript-eslint/eslint-plugin": "^6.8.0",
+    "@typescript-eslint/parser": "^6.8.0",
     "@vscode/test-electron": "^2.3.5",
     "case-anything": "^2.1.13",
     "change-case": "^5.0.2",
-    "esbuild": "^0.19.4",
+    "esbuild": "^0.19.5",
     "eslint": "^8.51.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
     "glob": "^10.3.10",
     "mocha": "^10.2.0",
+    "sponge-case": "^2.0.1",
+    "swap-case": "^3.0.1",
+    "title-case": "^4.1.0",
     "typescript": "^5.2.2"
   },
   "contributes": {
@@ -88,7 +81,10 @@
             "dotCase": true,
             "pathCase": true,
             "sentenceCase": true,
-            "trainCase": true
+            "trainCase": true,
+            "titleCase": true,
+            "swapCase": true,
+            "spongeCase": true
           },
           "description": "Specifies the case which you want to use."
         }

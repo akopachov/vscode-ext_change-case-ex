@@ -16,22 +16,25 @@ This extension allows you to convert the selected text into different case. Supp
 | Path case | `path/case` |
 | Sentence case | `Sentence case` |
 | Train case | `Train-Case` |
+| Title case | `Title Case` |
+| Swap case | `sWAP cASE` |
+| Sponge case | `SpoNge CAsE` |
 
 ## How to Use it
 
 ### Select any text from the file, You will see an left side icon for options
 
-![Alt text](https://i.ibb.co/rZQYspH/img1.png)
+![Alt text](https://i.imgur.com/7s7xk3Q.png)
 
 > **NOTE**: If you want to change all the occurance of the selected Text, use **Ctrl+Shift+L** or **Cmd+Shift+L**(on Mac) after selection
 
 ### Click on the icon, it will give the options on change the case and select any option from the dropdown
 
-![Alt text](https://i.ibb.co/VvYHQ45/img2.png)
+![Alt text](https://i.imgur.com/BYwqOUg.png)
 
 ### The selected text case will gets changed
 
-![Alt text](https://i.ibb.co/yV0JS8K/img3.png)
+![Alt text](https://i.imgur.com/BI8EY8t.png)
 
 > Language Supported: javascript, typescript, javascriptreact, typescriptreact, html, css, less, scss, sass, python, json, markdown, go
 
@@ -41,7 +44,7 @@ You can add only a subset of all supported Case Change options as per your prefe
 
 You need to change the default json (**settings.json**) in your VS Code settings (**Ctrl + ,**).
 
-![Alt text](https://i.ibb.co/rdvNTfy/setting-Img.png)
+![Alt text](https://i.imgur.com/W2AKiYX.png)
 
 Following is the default JSON that support all casing, Change the value to `false` which you don't want to use.
 
@@ -58,5 +61,8 @@ Following is the default JSON that support all casing, Change the value to `fals
     "dotCase": true,
     "pathCase": true,
     "sentenceCase": true,
-    "trainCase": true
+    "trainCase": true,
+    "titleCase": true,
+    "swapCase": true,
+    "spongeCase": true
 }
