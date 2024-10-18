@@ -11,6 +11,7 @@ This extension allows you to convert the selected text into different case. Supp
 | Capital case | `Capital Case` |
 | Kebab case | `kebab-case` |
 | Pascal case | `PascalCase` |
+| Pascal-snake case | `Pascal_Snake_Case` |
 | Constant case | `CONSTANT_CASE` |
 | Upper case | `UPPER CASE` |
 | Lower case | `lower case` |
@@ -58,6 +59,7 @@ Following is the default JSON that support all casing, Change the value to `fals
     "kebabCase": true,
     "constantCase": true,
     "pascalCase": true,
+    "pascalSnakeCase": true,
     "capitalizeCase": true,
     "lowerCase": true,
     "dotCase": true,
