@@ -95,8 +95,14 @@ export class ChangeCase implements vscode.CodeActionProvider {
     caseConvention: CaseConvention,
     text: string,
   ): vscode.CodeAction | null {
+    const editor = vscode.window.activeTextEditor;
+    if (!editor) {
+      return null;
+    }
+
+    const selections: readonly vscode.Selection[] = editor.selections;
     const updatedText = caseConvention.convert(text);
-    if (updatedText === text) {
+    if (updatedText === text && selections.length <= 1) {
       return null;
     }
     const fix = new vscode.CodeAction(
@@ -108,21 +114,17 @@ export class ChangeCase implements vscode.CodeActionProvider {
       vscode.CodeActionKind.QuickFix,
     );
     fix.edit = new vscode.WorkspaceEdit();
-    const editor = vscode.window.activeTextEditor;
-    if (editor) {
-      const selections: readonly vscode.Selection[] = editor.selections;
-      editor.edit(() => {
-        for (const selection of selections) {
-          if (fix.edit) {
-            fix.edit.replace(
-              document.uri,
-              selection,
-              caseConvention.convert(editor.document.getText(selection)),
-            );
-          }
+    editor.edit(() => {
+      for (const selection of selections) {
+        if (fix.edit) {
+          fix.edit.replace(
+            document.uri,
+            selection,
+            caseConvention.convert(editor.document.getText(selection)),
+          );
         }
-      });
-    }
+      }
+    });
     return fix;
   }
 }

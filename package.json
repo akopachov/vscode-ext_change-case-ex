@@ -2,7 +2,7 @@
   "name": "change-case-ex",
   "displayName": "Change Case Ex",
   "description": "Changes case of a selected text",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "engines": {
     "vscode": "^1.83.0"
   },
