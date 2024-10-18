@@ -10,6 +10,7 @@ import {
   pathCase,
   sentenceCase,
   trainCase,
+  pascalSnakeCase,
 } from "change-case";
 import { titleCase } from "title-case";
 import { swapCase } from "swap-case";
@@ -26,6 +27,10 @@ const SettingToCaseMapping: { [key: string]: CaseConvention } = {
   kebabCase: { example: "kebab-case", convert: kebabCase },
   constantCase: { example: "CONSTANT_CASE", convert: constantCase },
   pascalCase: { example: "PascalCase", convert: pascalCase },
+  pascalSnakeCase: {
+    example: "Pascal_Snake_Case",
+    convert: pascalSnakeCase,
+  },
   capitalizeCase: { example: "Capital Case", convert: capitalCase },
   lowerCase: { example: "lower case", convert: (str) => str?.toLowerCase() },
   upperCase: { example: "UPPER CASE", convert: (str) => str?.toUpperCase() },
